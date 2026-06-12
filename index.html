@@ -18,7 +18,7 @@
 }
 html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;background:#0e1420}
 #deck{width:100vw;height:100vh;position:relative;overflow:hidden}
-.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.5rem 4rem;opacity:0;pointer-events:none;transform:translateX(80px);transition:opacity .4s ease,transform .4s ease}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.5rem 4rem 5rem;opacity:0;pointer-events:none;transform:translateX(80px);transition:opacity .4s ease,transform .4s ease}
 .slide.active{opacity:1;pointer-events:all;transform:translateX(0)}
 .slide.exit{opacity:0;transform:translateX(-80px);transition:opacity .3s ease,transform .3s ease}
 
@@ -30,15 +30,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
 #pdots{display:flex;gap:5px;align-items:center}
 .pd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .22s;cursor:pointer}
 .pd.on{background:var(--teal);width:16px;border-radius:3px}
-#slabel{position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);z-index:200;white-space:nowrap}
+#slabel{display:none}
 .slide:first-child img[alt="FUNDAPI"]{display:block;width:200px!important;height:auto!important;max-width:none;margin:0 auto}
 .slide:last-child img[alt="FUNDAPI"]{height:82px!important}
 
 /* helpers */
 .ew{width:100%;max-width:920px}
-.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
-.big-title{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:.75rem}
-.lead{font-size:.97rem;line-height:1.7;margin-bottom:1.5rem}
+.eyebrow{font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+.big-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.2;margin-bottom:.75rem}
+.lead{font-size:1.2rem;line-height:1.7;margin-bottom:1.5rem}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;width:100%;max-width:920px}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;width:100%;max-width:920px}
 
@@ -64,7 +64,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
 .mc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.4rem}
 .mc-n{font-size:2.4rem;font-weight:800;line-height:1;margin-bottom:.4rem}
 .mc-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:.4rem}
-.mc-d{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
+.mc-d{font-size:19px;color:rgba(255,255,255,.5);line-height:1.6}
 .mc-step{display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.55);margin-top:.4rem;line-height:1.4}
 .mc-step i{font-size:15px;flex-shrink:0;color:rgba(255,255,255,.35)}
 
@@ -75,58 +75,58 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
 /* stat strip */
 .stat-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;width:100%;max-width:920px}
 .stat-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.25rem 1rem;text-align:center}
-.stat-n{font-size:2.2rem;font-weight:800;line-height:1;margin-bottom:.3rem}
-.stat-l{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.4}
+.stat-n{font-size:3rem;font-weight:800;line-height:1;margin-bottom:.3rem}
+.stat-l{font-size:17px;color:rgba(255,255,255,.5);line-height:1.4}
 
 /* maps */
 .map-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;width:100%;max-width:920px}
 .map-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
 .map-card img{width:100%;height:195px;object-fit:cover}
-.map-lbl{padding:.55rem .9rem;font-size:13px;font-weight:700;color:var(--navy);border-top:1px solid rgba(0,0,0,.06);text-align:center}
+.map-lbl{padding:.75rem .9rem;font-size:17px;font-weight:700;color:var(--navy);border-top:1px solid rgba(0,0,0,.06);text-align:center}
 
 /* territory cards */
 .tc{background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.08);overflow:hidden}
 .tc-head{padding:1rem 1.25rem .7rem;border-bottom:1px solid rgba(0,0,0,.06)}
 .tc-name{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:.2rem}
-.tc-meta{font-size:12px;color:#6b7280;display:flex;gap:.75rem;flex-wrap:wrap}
+.tc-meta{font-size:16px;color:#6b7280;display:flex;gap:.75rem;flex-wrap:wrap}
 .tc-body{padding:1rem 1.25rem}
-.sec-lbl{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:.7rem 0 .4rem}
+.sec-lbl{font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:.7rem 0 .4rem}
 .sec-lbl:first-child{margin-top:0}
-.bul{display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.5;margin-bottom:.35rem;color:#374151}
+.bul{display:flex;align-items:flex-start;gap:7px;font-size:18px;line-height:1.5;margin-bottom:.35rem;color:#374151}
 .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:.4rem}
 .chip{font-size:11.5px;padding:3px 9px;border-radius:6px;font-weight:500;background:var(--teal-l);color:#0F6E56}
 
 /* voices */
 .vcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-top:3px solid var(--teal);border-radius:14px;padding:1.5rem}
-.vq{font-size:15px;font-style:italic;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:.75rem}
-.vs{font-size:12px;color:var(--teal-m);font-weight:600}
+.vq{font-size:24px;font-style:italic;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:.75rem}
+.vs{font-size:17px;color:var(--teal-m);font-weight:600}
 
 /* findings */
 .find-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;width:100%;max-width:920px;align-items:center}
 .fn{font-size:5rem;font-weight:800;line-height:1;opacity:.12;margin-bottom:.25rem}
-.fb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
+.fb{font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
 .ft{font-size:clamp(1.2rem,2.4vw,1.8rem);font-weight:800;line-height:1.25;margin-bottom:.9rem}
-.fd{font-size:14px;line-height:1.75}
+.fd{font-size:20px;line-height:1.75}
 .ins-stack{display:flex;flex-direction:column;gap:.7rem}
-.ins{background:#fff;border-radius:12px;padding:1rem 1.1rem;border:1px solid rgba(0,0,0,.07);font-size:13px;color:#374151;line-height:1.55;display:flex;align-items:flex-start;gap:.7rem}
+.ins{background:#fff;border-radius:12px;padding:1.1rem 1.25rem;border:1px solid rgba(0,0,0,.07);font-size:18px;color:#374151;line-height:1.55;display:flex;align-items:flex-start;gap:.7rem}
 .ins i{font-size:18px;flex-shrink:0;margin-top:1px}
 
 /* recs */
 .rec-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;width:100%;max-width:920px;align-items:center}
-.rl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-m);font-weight:600;margin-bottom:.4rem}
-.rn{font-size:4rem;font-weight:800;line-height:1;color:rgba(255,255,255,.07);margin-bottom:.2rem}
+.rl{font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-m);font-weight:600;margin-bottom:.4rem}
+.rn{font-size:5rem;font-weight:800;line-height:1;color:rgba(255,255,255,.07);margin-bottom:.2rem}
 .rt{font-size:clamp(1.2rem,2.4vw,1.8rem);font-weight:800;color:#fff;line-height:1.25;margin-bottom:.9rem}
-.rb{font-size:14px;color:rgba(255,255,255,.6);line-height:1.75}
+.rb{font-size:20px;color:rgba(255,255,255,.6);line-height:1.75}
 .rp-stack{display:flex;flex-direction:column;gap:.7rem}
-.rp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1rem 1.1rem;font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.55;display:flex;align-items:flex-start;gap:.7rem}
+.rp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.1rem 1.25rem;font-size:18px;color:rgba(255,255,255,.8);line-height:1.55;display:flex;align-items:flex-start;gap:.7rem}
 .rp i{font-size:18px;flex-shrink:0;margin-top:1px;color:var(--teal-m)}
-.ralert{background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.2);border-radius:12px;padding:.9rem 1.1rem;font-size:13px;color:var(--teal-m);line-height:1.55}
+.ralert{background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.2);border-radius:12px;padding:1rem 1.25rem;font-size:17px;color:var(--teal-m);line-height:1.55}
 
 /* close */
 .close-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;width:100%;max-width:740px;margin-top:1.75rem}
-.cg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.9rem 1rem;text-align:center;font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.5}
-.cg strong{display:block;color:var(--teal-m);font-size:13px;margin-bottom:.25rem}
+.cg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1rem;text-align:center;font-size:17px;color:rgba(255,255,255,.6);line-height:1.5}
+.cg strong{display:block;color:var(--teal-m);font-size:19px;margin-bottom:.25rem}
 
 /* DEMOGRAPHY SLIDE */
 .demo-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;width:100%;max-width:920px;align-items:start}
@@ -179,31 +179,22 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
 <div class="slide bg-navy2" data-label="Metodología">
   <div class="ew">
     <p class="eyebrow ai" style="color:var(--teal-m)">¿Qué hicimos?</p>
-    <h2 class="big-title ai" style="color:#fff">Tres momentos de escucha, en ese orden</h2>
+    <h2 class="big-title ai" style="color:#fff">Tres momentos de levantamiento de información</h2>
     <div class="method-row ai">
       <div class="mc">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.75rem">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(29,158,117,.2);display:flex;align-items:center;justify-content:center"><i class="ti ti-user-circle" style="color:var(--teal-m);font-size:20px"></i></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--teal-m)">Primero</div>
-        </div>
+        <div style="margin-bottom:1rem"><i class="ti ti-user-circle" style="color:var(--teal-m);font-size:3rem"></i></div>
         <div class="mc-t">Entrevistas a líderes comunitarios</div>
-        <div class="mc-d">Un líder representativo de cada uno de los tres sectores priorizados. Guía semiestructurada en 8 bloques temáticos, con grabación de audio.</div>
+        <div class="mc-d">Un líder por territorio · Guía en 8 bloques</div>
       </div>
       <div class="mc">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.75rem">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(186,117,23,.2);display:flex;align-items:center;justify-content:center"><i class="ti ti-users" style="color:#FAC775;font-size:20px"></i></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#FAC775">Luego</div>
-        </div>
+        <div style="margin-bottom:1rem"><i class="ti ti-users" style="color:#FAC775;font-size:3rem"></i></div>
         <div class="mc-t">Talleres comunitarios</div>
-        <div class="mc-d">Un taller por cada territorio priorizado, con participación abierta a la comunidad. Cartografía participativa y preguntas mediante post-its. 114 personas en total.</div>
+        <div class="mc-d">Un taller por territorio · 114 participantes</div>
       </div>
       <div class="mc">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.75rem">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(83,74,183,.2);display:flex;align-items:center;justify-content:center"><i class="ti ti-building-community" style="color:#AFA9EC;font-size:20px"></i></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#AFA9EC">Al final</div>
-        </div>
-        <div class="mc-t">Taller con organizaciones de la sociedad civil</div>
-        <div class="mc-d">Un taller específico con representantes de las OSC activas en los tres territorios. Canvas institucional en 6 dimensiones. 15 organizaciones, 18 representantes.</div>
+        <div style="margin-bottom:1rem"><i class="ti ti-building-community" style="color:#AFA9EC;font-size:3rem"></i></div>
+        <div class="mc-t">Taller con OSC</div>
+        <div class="mc-d">15 organizaciones · 18 representantes</div>
       </div>
     </div>
   </div>
@@ -267,7 +258,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
             <div style="font-size:12px;color:rgba(255,255,255,.45)">Organizaciones de la sociedad civil de los tres territorios</div>
           </div>
           <h3 style="color:#fff;font-size:13px;margin-bottom:.75rem">18 representantes — perfil distinto al comunitario</h3>
-          <div class="osc-demo">
+          <div class="osc-demo" style="align-items:center">
             <div style="text-align:center">
               <div class="osc-pct" style="color:#FAC775">61%</div>
               <div style="font-size:2.2rem;line-height:1;color:#FAC775;margin:.1rem 0">♂</div>
@@ -359,35 +350,33 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
         <div class="tc-head"><div class="tc-name">Paraíso de la Flor</div><div class="tc-meta"><span>27 participantes · 61 espacios</span></div></div>
         <div class="tc-body">
           <div class="sec-lbl" style="color:var(--coral)">Lo más crítico</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Sector fragmentado — hay zonas fuera del alcance de líderes</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Canchas cooptadas · sin espacio seguro para NNA</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Sin infraestructura comunitaria propia</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Sector fragmentado y sin infraestructura propia</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Canchas cooptadas — sin espacio para NNA</div>
           <div class="sec-lbl" style="color:var(--teal);margin-top:.75rem">Demanda principal</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Espacio CARDT cercano para NNA y jóvenes</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Centro de salud con medicamentos disponibles</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Espacio CARDT para NNA y jóvenes</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Centro de salud con medicamentos</div>
         </div>
       </div>
       <div class="tc">
         <div class="tc-head"><div class="tc-name">Isla Trinitaria</div><div class="tc-meta"><span>45 participantes · 70 espacios</span></div></div>
         <div class="tc-body">
           <div class="sec-lbl" style="color:var(--coral)">Lo más crítico</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Mayor densidad de OSC pero sin articulación entre cooperativas</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Canchas vendidas como chatarra · movilidad restringida</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Cada organización opera solo en su zona</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Muchas OSC pero sin articulación</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Canchas vendidas · movilidad restringida por GDOs</div>
           <div class="sec-lbl" style="color:var(--teal);margin-top:.75rem">Demanda principal</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Casas comunales y comedores comunitarios</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Talleres de identidad y rehabilitación para jóvenes</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Casas comunales y comedores</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Rehabilitación y talleres de identidad</div>
         </div>
       </div>
       <div class="tc">
         <div class="tc-head"><div class="tc-name">Sergio Toral</div><div class="tc-meta"><span>42 participantes · 48 espacios</span></div></div>
         <div class="tc-body">
           <div class="sec-lbl" style="color:var(--coral)">Lo más crítico</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Casa comunal nunca construida — solo el polifuncional activo</div>
-          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Jóvenes sin opciones laborales al graduarse · sin colegios técnicos</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Sin casa comunal — solo el polifuncional activo</div>
+          <div class="bul"><span class="dot" style="background:var(--coral)"></span>Jóvenes sin opciones al graduarse</div>
           <div class="sec-lbl" style="color:var(--teal);margin-top:.75rem">Demanda principal</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Casa comunal — mencionada más de 10 veces</div>
-          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Formación técnica con componente emocional</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Casa comunal — la más urgente</div>
+          <div class="bul"><span class="dot" style="background:var(--teal)"></span>Formación técnica y emocional</div>
         </div>
       </div>
     </div>
@@ -410,86 +399,86 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI",system-u
 <!-- HALLAZGOS 1–6 -->
 <div class="slide bg-off" data-label="Hallazgo 1 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:var(--teal)">01</div><div class="fb" style="color:var(--teal)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">El territorio no es homogéneo y el trabajo opera dentro de límites invisibles</div><div class="fd" style="color:#374151">Sin arraigo construido durante años, ninguna intervención puede entrar. La estrategia más efectiva es profundidad en los puntos donde ya existe presencia, no cobertura amplia desde afuera.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-map-off" style="color:var(--teal)"></i>Cada líder opera donde lo conocen. Zonas adyacentes pueden ser inaccesibles para ellos mismos.</div><div class="ins"><i class="ti ti-clock" style="color:var(--amber)"></i>La legitimidad no se construye con proyectos — se construye con años de presencia y relaciones personales.</div><div class="ins"><i class="ti ti-arrow-narrow-right" style="color:var(--navy)"></i>Diseñar las intervenciones desde los actores ya presentes, no desde afuera hacia adentro.</div></div>
+    <div><div class="fn" style="color:var(--teal)">01</div><div class="fb" style="color:var(--teal)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">El territorio no es homogéneo y el trabajo opera dentro de límites invisibles</div><div class="fd" style="color:#374151">Sin arraigo, ninguna intervención puede entrar. La clave es profundidad donde ya hay presencia — no cobertura amplia.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-map-off" style="color:var(--teal)"></i>Cada líder opera donde lo conocen — zonas adyacentes pueden ser inaccesibles.</div><div class="ins"><i class="ti ti-clock" style="color:var(--amber)"></i>La legitimidad se construye con años de presencia, no con proyectos.</div><div class="ins"><i class="ti ti-arrow-narrow-right" style="color:var(--navy)"></i>Diseñar desde los actores presentes, no desde afuera.</div></div>
   </div>
 </div>
 
 <div class="slide bg-off" data-label="Hallazgo 2 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:var(--purple)">02</div><div class="fb" style="color:var(--purple)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Los líderes religiosos son los actores con mayor capacidad de incidencia territorial</div><div class="fd" style="color:#374151">Respetados incluso por los GDOs. Pueden moverse donde otros no. Son los únicos que trabajan con la familia completa — el componente que el resto de organizaciones no cubre.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-users-group" style="color:var(--purple)"></i>Únicos que incluyen padres y tutores de forma sistemática, no solo NNA o jóvenes.</div><div class="ins"><i class="ti ti-map-check" style="color:var(--amber)"></i>Presencia simultánea en múltiples sectores a través de redes de iglesias.</div><div class="ins"><i class="ti ti-shield-check" style="color:var(--teal)"></i>Su legitimidad viene de décadas de presencia — no de financiamiento ni de proyectos.</div></div>
+    <div><div class="fn" style="color:var(--purple)">02</div><div class="fb" style="color:var(--purple)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Los líderes religiosos son los actores con mayor capacidad de incidencia territorial</div><div class="fd" style="color:#374151">Respetados incluso por los GDOs. Únicos que trabajan con la familia completa.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-users-group" style="color:var(--purple)"></i>Únicos que incluyen a toda la familia — no solo NNA.</div><div class="ins"><i class="ti ti-map-check" style="color:var(--amber)"></i>Presencia en múltiples sectores vía redes de iglesias.</div><div class="ins"><i class="ti ti-shield-check" style="color:var(--teal)"></i>Legitimidad de décadas — no de proyectos.</div></div>
   </div>
 </div>
 
 <div class="slide bg-off" data-label="Hallazgo 3 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:var(--amber)">03</div><div class="fb" style="color:var(--amber)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">La demanda de actividades para NNA y jóvenes es la respuesta preventiva más consistente</div><div class="fd" style="color:#374151">Las comunidades identifican que los jóvenes sin opciones significativas son los más expuestos. Ya existen iniciativas en marcha. Lo que falta es fortalecerlas, no empezar desde cero.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-music" style="color:var(--amber)"></i>No solo entretenimiento: actividades que combinan habilidades, identidad y pertenencia comunitaria.</div><div class="ins"><i class="ti ti-trending-up" style="color:var(--teal)"></i>Las iniciativas existentes operan con muy pocos recursos. Fortalecer lo que ya está es más efectivo que crear desde fuera.</div></div>
+    <div><div class="fn" style="color:var(--amber)">03</div><div class="fb" style="color:var(--amber)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">La demanda de actividades para NNA y jóvenes es la respuesta preventiva más consistente</div><div class="fd" style="color:#374151">Los jóvenes sin opciones son los más expuestos. Ya existen iniciativas. Lo que falta es fortalecerlas.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-music" style="color:var(--amber)"></i>Habilidades + identidad + pertenencia comunitaria.</div><div class="ins"><i class="ti ti-trending-up" style="color:var(--teal)"></i>Fortalecer lo que ya existe — es más efectivo que crear desde cero.</div></div>
   </div>
 </div>
 
 <div class="slide bg-off" data-label="Hallazgo 4 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:var(--coral)">04</div><div class="fb" style="color:var(--coral)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Sin espacio físico no hay intervención posible</div><div class="fd" style="color:#374151">Canchas y parques cooptados o deteriorados en los tres territorios. Sin resolver el dónde operar, ninguna actividad puede escalar ni sostenerse en el tiempo.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-building" style="color:var(--coral)"></i>Solo 15 espacios recreativos en los 3 sectores — 5 por territorio — y varios inutilizables.</div><div class="ins"><i class="ti ti-home-2" style="color:var(--amber)"></i>La casa comunal en Sergio Toral fue la demanda más reiterada: más de 10 respuestas distintas.</div><div class="ins"><i class="ti ti-key" style="color:var(--teal)"></i>Recuperar espacios es condición habilitante para todo lo demás, no un objetivo secundario.</div></div>
+    <div><div class="fn" style="color:var(--coral)">04</div><div class="fb" style="color:var(--coral)">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Sin espacio físico no hay intervención posible</div><div class="fd" style="color:#374151">Canchas y parques cooptados en los tres territorios. Sin espacio, ninguna actividad escala.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-building" style="color:var(--coral)"></i>15 espacios recreativos en total — 5 por territorio — varios inutilizables.</div><div class="ins"><i class="ti ti-home-2" style="color:var(--amber)"></i>Casa comunal en Sergio Toral: la demanda más repetida.</div><div class="ins"><i class="ti ti-key" style="color:var(--teal)"></i>Recuperar espacios es condición habilitante — no secundaria.</div></div>
   </div>
 </div>
 
 <div class="slide bg-off" data-label="Hallazgo 5 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:#185FA5">05</div><div class="fb" style="color:#185FA5">Hallazgo clave</div><div class="ft" style="color:var(--navy)">La brecha de capacidades define quién accede a fondos, no la calidad del trabajo</div><div class="fd" style="color:#374151">Las OSC que saben formular proyectos acceden al financiamiento. Las de mayor arraigo territorial quedan fuera de las convocatorias, no porque trabajen menos, sino porque nunca tuvieron acceso a formación técnica en gestión.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-file-invoice" style="color:#185FA5"></i>Organizaciones con años de trabajo sostenido han perdido convocatorias por no saber estructurar una propuesta.</div><div class="ins"><i class="ti ti-arrows-exchange" style="color:var(--amber)"></i>La brecha se amplía sola con el tiempo si no se interviene directamente.</div><div class="ins"><i class="ti ti-network" style="color:var(--teal)"></i>Los donantes concentrados en pocas redes generan dependencia compartida — un riesgo sistémico.</div></div>
+    <div><div class="fn" style="color:#185FA5">05</div><div class="fb" style="color:#185FA5">Hallazgo clave</div><div class="ft" style="color:var(--navy)">La brecha de capacidades define quién accede a fondos, no la calidad del trabajo</div><div class="fd" style="color:#374151">Las que saben formular acceden a fondos. Las de mayor arraigo quedan fuera — no por trabajar menos, sino por falta de formación técnica.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-file-invoice" style="color:#185FA5"></i>Años de trabajo sostenido y fuera de las convocatorias.</div><div class="ins"><i class="ti ti-arrows-exchange" style="color:var(--amber)"></i>Sin intervención, la brecha se amplía sola.</div><div class="ins"><i class="ti ti-network" style="color:var(--teal)"></i>Donantes concentrados = dependencia sistémica.</div></div>
   </div>
 </div>
 
 <div class="slide bg-off" data-label="Hallazgo 6 de 6">
   <div class="find-layout ai">
-    <div><div class="fn" style="color:#5F5E5A">06</div><div class="fb" style="color:#5F5E5A">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Las intervenciones cortas generan actividad pero no producen cambios que se sostienen</div><div class="fd" style="color:#374151">Al terminar el proyecto, el joven vuelve al mismo entorno. Sin continuidad, sin familia involucrada, sin cambio en el contexto, el impacto se diluye. El patrón se repite en los tres territorios.</div></div>
-    <div class="ins-stack"><div class="ins"><i class="ti ti-refresh" style="color:#5F5E5A"></i>Proyectos que llegan, generan expectativa y se retiran — sin cambio estructural sostenido.</div><div class="ins"><i class="ti ti-home-heart" style="color:var(--amber)"></i>El entorno familiar determina si el impacto del proyecto se sostiene o se diluye.</div><div class="ins"><i class="ti ti-calendar-time" style="color:var(--teal)"></i>Horizonte de mediano plazo + trabajo simultáneo con jóvenes, familia y comunidad.</div></div>
+    <div><div class="fn" style="color:#5F5E5A">06</div><div class="fb" style="color:#5F5E5A">Hallazgo clave</div><div class="ft" style="color:var(--navy)">Las intervenciones cortas generan actividad pero no producen cambios que se sostienen</div><div class="fd" style="color:#374151">Al terminar el proyecto, el joven vuelve al mismo entorno. Sin continuidad ni familia, el impacto se diluye.</div></div>
+    <div class="ins-stack"><div class="ins"><i class="ti ti-refresh" style="color:#5F5E5A"></i>Llegan, generan expectativa y se retiran — sin cambio estructural.</div><div class="ins"><i class="ti ti-home-heart" style="color:var(--amber)"></i>El entorno familiar decide si el impacto se sostiene.</div><div class="ins"><i class="ti ti-calendar-time" style="color:var(--teal)"></i>Mediano plazo + jóvenes + familia + comunidad a la vez.</div></div>
   </div>
 </div>
 
 <!-- RECOMENDACIONES 1–6 -->
 <div class="slide bg-navy" data-label="Recomendación 1 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">01</div><div class="rt">Construir sobre lo que ya existe</div><div class="rb">No crear estructuras paralelas. Los actores con presencia verificada son el punto de partida — no los destinatarios pasivos de un programa externo.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-plant-2"></i>Las organizaciones pequeñas no necesitan reemplazo — necesitan recursos y acompañamiento para ampliar lo que ya hacen.</div><div class="rp"><i class="ti ti-alert-triangle" style="color:#FAC775"></i>Riesgo concreto: duplicar actividades con los mismos participantes genera fatiga y compite con lo existente.</div><div class="ralert">Karibu lleva décadas en territorio. Ese capital comunitario no se reconstruye desde afuera.</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">01</div><div class="rt">Construir sobre lo que ya existe</div><div class="rb">No crear estructuras paralelas. Los actores con presencia son el punto de partida.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-plant-2"></i>No reemplazarlas — darles recursos para ampliar lo que ya hacen.</div><div class="rp"><i class="ti ti-alert-triangle" style="color:#FAC775"></i>Duplicar actividades genera fatiga y compite con lo existente.</div><div class="ralert">Karibu lleva décadas. Ese capital no se reconstruye desde afuera.</div></div>
   </div>
 </div>
 
 <div class="slide bg-navy" data-label="Recomendación 2 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">02</div><div class="rt">Respetar los límites operativos del territorio en el diseño</div><div class="rb">Solo los líderes locales saben qué zonas son accesibles, en qué horarios y bajo qué condiciones. Ese conocimiento no está en ningún documento.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-users"></i>Involucrar actores locales en el diseño desde el inicio — no solo en la ejecución de actividades.</div><div class="rp"><i class="ti ti-map-off" style="color:#FAC775"></i>Hay zonas que no serán accesibles en el corto plazo. Forzar el acceso pone en riesgo a participantes y equipos.</div><div class="ralert">El acceso territorial no se puede asumir desde el papel — debe validarse con quienes viven ahí.</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">02</div><div class="rt">Respetar los límites operativos del territorio en el diseño</div><div class="rb">Solo los líderes locales saben qué zonas son accesibles y bajo qué condiciones.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-users"></i>Involucrarlos en el diseño desde el inicio — no solo en la ejecución.</div><div class="rp"><i class="ti ti-map-off" style="color:#FAC775"></i>Forzar el acceso pone en riesgo a participantes y equipos.</div><div class="ralert">El acceso no se asume — se valida con quienes viven ahí.</div></div>
   </div>
 </div>
 
 <div class="slide bg-navy" data-label="Recomendación 3 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">03</div><div class="rt">Reconocer la red eclesial como actor estratégico transversal</div><div class="rb">Acceso a zonas de alta complejidad más trabajo con la familia completa. Combinado con OSC técnicas, es la articulación de mayor potencial en los tres territorios.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-church"></i>Facilitan el acceso donde otros actores no pueden entrar y operan donde el Estado no llega.</div><div class="rp"><i class="ti ti-users-group"></i>Trabajan con familias completas — el componente ausente en la mayoría de intervenciones actuales.</div><div class="ralert">Red eclesial (acceso + confianza) + OSC técnicas (formulación + gestión) = combinación con alto potencial.</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">03</div><div class="rt">Reconocer la red eclesial como actor estratégico transversal</div><div class="rb">Acceso donde otros no entran + trabajo con la familia completa.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-church"></i>Llegan donde el Estado no llega.</div><div class="rp"><i class="ti ti-users-group"></i>Trabajan con familias enteras — el componente ausente en la mayoría de intervenciones.</div><div class="ralert">Red eclesial + OSC técnicas = la combinación de mayor potencial.</div></div>
   </div>
 </div>
 
 <div class="slide bg-navy" data-label="Recomendación 4 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">04</div><div class="rt">Diseñar con horizonte de mediano plazo y con la familia como unidad</div><div class="rb">Tres niveles simultáneos: el joven, la familia y el entorno comunitario. Sin el contexto familiar, los avances individuales no se sostienen al cerrar el proyecto.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-tools"></i>Habilidades técnicas más fortalecimiento emocional — que el joven se vea capaz de un futuro distinto.</div><div class="rp"><i class="ti ti-clock"></i>Este proceso no ocurre en meses. Requiere presencia continua y financiamiento de mediano plazo.</div><div class="ralert">"No se trata solo de enseñar un oficio — sino de que el joven llegue a verse a sí mismo diferente." — Susana Rosero</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">04</div><div class="rt">Diseñar con horizonte de mediano plazo y con la familia como unidad</div><div class="rb">Tres niveles: el joven, la familia y la comunidad. Sin familia, el impacto no se sostiene.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-tools"></i>Habilidades técnicas + que el joven se vea capaz de un futuro distinto.</div><div class="rp"><i class="ti ti-clock"></i>No ocurre en meses. Requiere presencia continua.</div><div class="ralert">"No se trata solo de enseñar un oficio — sino de que el joven llegue a verse a sí mismo diferente." — Susana Rosero</div></div>
   </div>
 </div>
 
 <div class="slide bg-navy" data-label="Recomendación 5 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">05</div><div class="rt">Priorizar la recuperación y activación de espacios comunitarios</div><div class="rb">Condición habilitante para cualquier otra intervención. Sin espacio, nada escala. La clave no es solo la infraestructura — es la programación sostenida que activa el espacio.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-tool"></i>No implica necesariamente nueva infraestructura: mantenimiento, iluminación y programación continua ya cambian la dinámica.</div><div class="rp"><i class="ti ti-building-community"></i>Requiere articulación entre Municipio, fuerza pública y organizaciones con presencia territorial real.</div><div class="ralert">Sin uso regular, los espacios vuelven a ser tomados. La programación sostenida es lo que los convierte en puntos de encuentro.</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">05</div><div class="rt">Priorizar la recuperación y activación de espacios comunitarios</div><div class="rb">Sin espacio, nada escala. La clave es la programación sostenida — no solo la infraestructura.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-tool"></i>Mantenimiento + iluminación + programación continua — no siempre nueva infraestructura.</div><div class="rp"><i class="ti ti-building-community"></i>Municipio + fuerza pública + organizaciones territoriales.</div><div class="ralert">Sin uso regular, los espacios vuelven a ser tomados.</div></div>
   </div>
 </div>
 
 <div class="slide bg-navy" data-label="Recomendación 6 de 6">
   <div class="rec-layout ai">
-    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">06</div><div class="rt">Cerrar la brecha de capacidades entre organizaciones grandes y pequeñas</div><div class="rb">Acompañamiento entre pares: las OSC consolidadas acompañan a las más pequeñas en procesos reales de formulación. Más efectivo y contextualizado que capacitaciones genéricas.</div></div>
-    <div class="rp-stack"><div class="rp"><i class="ti ti-arrows-exchange"></i>Nia Kali y ACOBAG tienen experiencia comprobada. Ese conocimiento puede transferirse dentro del ecosistema.</div><div class="rp"><i class="ti ti-file-check"></i>El acompañamiento debe darse en procesos concretos — no en talleres abstractos sobre gestión de proyectos.</div><div class="ralert">La brecha no es de compromiso ni de trabajo — es de acceso a herramientas. Reducirla cambia quién accede a fondos.</div></div>
+    <div><div class="rl">¿Qué hacer ahora?</div><div class="rn">06</div><div class="rt">Cerrar la brecha de capacidades entre organizaciones grandes y pequeñas</div><div class="rb">Las OSC consolidadas acompañan a las más pequeñas en procesos reales de formulación.</div></div>
+    <div class="rp-stack"><div class="rp"><i class="ti ti-arrows-exchange"></i>Nia Kali y ACOBAG tienen experiencia que puede transferirse.</div><div class="rp"><i class="ti ti-file-check"></i>En procesos concretos — no en talleres abstractos.</div><div class="ralert">No es falta de compromiso — es falta de herramientas. Reducirla cambia quién accede a fondos.</div></div>
   </div>
 </div>
 
